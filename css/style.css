@@ -3,7 +3,6 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	*behavior: url('/test/grid/script/boxsizing.htc');
 }
 
 /* Display block per gli elementi HTML5 su IE */
@@ -175,11 +174,6 @@ body.bg {
 }
 
 /* Stili  per le varie sezioni */
-#page {
-    position: relative;
-    left: 0;
-}
-
 header {
 	padding: 5px;
 	height: 70px;
@@ -215,3 +209,313 @@ nav ul li a {
 a.attiva-nav {
 	display: none;
 }
+
+/* */
+/* Register Page */
+/* */
+.form_register * {
+	margin: 0;
+	padding: 0;
+}
+
+.form_register {
+	outline: none;
+	box-shadow: 0 0 20px rgba(0,0,0,.3);
+    border-radius: 12px;
+	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #666;
+    width: 100% !important;
+}
+
+.form_register header {
+	padding: 20px 70px;	
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background: rgba(238,238,238,.9);
+	font-size: 25px;
+	font-weight: 300;
+	color: #232323;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.form_register fieldset {
+	padding: 25px 70px 5px;
+	border: none;
+	background: rgba(255,255,255,1);
+}
+.form_register fieldset + fieldset {
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+.form_register section {
+	margin-bottom: 20px;
+    width: 100%;
+}
+.form_register footer {
+	padding: 0px 30px 40px;
+	border-top: 1px solid rgba(0,0,0,.1);
+	background: rgba(238,238,238,.9);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.form_register .select{
+	position: relative;
+	display: block;
+}
+
+.input {
+    display: block;
+}
+
+.form_register .input input,
+.form_register .select select,
+.form_register .areatesto areatesto {
+    display: block !important;
+	height: 39px;
+	padding: 8px 10px;
+	outline: none;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 5;
+	background: #fff;
+	font: 15px/19px 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #404040;
+	appearance: normal;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+    	width: 100% !important;
+    
+}
+
+/* selects */
+/**/
+.form_register .select i {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	width: 5px;
+	height: 11px;
+	background: #fff;
+}
+.form_register .select i:after,
+.form_register .select i:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+.form_register .select i:after {
+	bottom: 0;
+	border-top: 4px solid #404040;
+}
+.form_register .select i:before {
+	top: 0;
+	border-bottom: 4px solid #404040;
+}
+
+input[type=checkbox] {
+  margin-right: 15px;
+	cursor: pointer;
+}
+
+/**/
+/* buttons */
+/**/
+.form_register .button {
+	float: right;
+	height: 39px;
+	margin: 10px 0 0 0;
+	padding: 0 5px;
+	border: 0;
+	font: 300 15px/39px 'Open Sans', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+/**/
+/* grid */
+/**/
+.form_register .row {
+	margin: 0 -15px;
+}
+.form_register .row:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.form_register .col {
+	float: left;
+    width: 50%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+/**/
+/* normal state */
+/**/
+.form_register .input input,
+.form_register .select select,
+.form_register .areatesto areatesto,
+.form_register .radio i,
+
+.form_register .toggle i,
+.form_register .icon-append,
+.form_register .icon-prepend {
+	border-color: #e5e5e5;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+}
+
+.form_register .button {
+    background-color: transparent;
+    color: #3979ff;
+    font-size: 20px;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+}
+
+/**/
+/* hover state */
+/**/
+.form_register .input:hover input,
+.form_register .select:hover select,
+.form_register .areatesto:hover areatesto,
+.form_register .radio:hover i,
+.form_register .checkbox:hover i,
+.form_register .toggle:hover i {
+	border-color: #8dc9e5;
+}
+.form_register .rating input + label:hover,
+.form_register .rating input + label:hover ~ label {
+	color: #2da5da;
+}
+.form_register .button:hover {
+	opacity: 1;
+    color: #39aaff;
+}
+
+/**/
+/* focus state */
+/**/
+.form_register .input input:focus,
+.form_register .select select:focus,
+.form_register .areatesto areatesto:focus,
+.form_register .radio input:focus + i,
+.form_register .checkbox input:focus + i,
+.form_register .toggle input:focus + i {
+	border-color: #2da5da;
+}
+
+/**/
+/* error state */
+/**/
+.form_register .state-error input,
+.form_register .state-error select,
+.form_register .state-error areatesto,
+.form_register .radio.state-error i,
+.form_register .checkbox.state-error i,
+.form_register .toggle.state-error i {
+	background: #fff0f0;
+}
+.form_register .state-error select + i {
+	background: #fff0f0;
+	box-shadow: 0 0 0 12px #fff0f0;
+}
+.form_register .toggle.state-error input:checked + i {
+	background: #fff0f0;
+}
+.form_register .note-error {
+	color: #ee9393;	
+}
+
+/**/
+/* success state */
+/**/
+.form_register .state-success input,
+.form_register .state-success select,
+.form_register .state-success areatesto,
+.form_register .radio.state-success i,
+.form_register .checkbox.state-success i,
+.form_register .toggle.state-success i {
+	background: #f0fff0;
+}
+.form_register .state-success select + i {
+	background: #f0fff0;
+	box-shadow: 0 0 0 12px #f0fff0;
+}
+.form_register .toggle.state-success input:checked + i {
+	background: #f0fff0;
+}
+.form_register .note-success {
+	color: #6fb679;
+}
+
+/* */
+/* Map Page */
+/* */
+#map{
+    position: fixed;
+    width: 100%; height: 100%;
+}
+#txt{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 5px);
+    background-color: rgba(238,238,238,.6);
+    padding: 10px;
+    color: #222;
+    width: 350px;
+    text-align: center;
+}
+
+      .ol-popup {
+        position: absolute;
+        background-color: white;
+        -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+        padding: 15px;
+        border-radius: 10px;
+        border: 1px solid #cccccc;
+        bottom: 12px;
+        left: -50px;
+        min-width: 280px;
+      }
+      .ol-popup:after, .ol-popup:before {
+        top: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+      }
+      .ol-popup:after {
+        border-top-color: white;
+        border-width: 10px;
+        left: 48px;
+        margin-left: -10px;
+      }
+      .ol-popup:before {
+        border-top-color: #cccccc;
+        border-width: 11px;
+        left: 48px;
+        margin-left: -11px;
+      }
+      .ol-popup-closer {
+        text-decoration: none;
+        position: absolute;
+        top: 2px;
+        right: 8px;
+      }
+      .ol-popup-closer:after {
+        content: "✖";
+      }

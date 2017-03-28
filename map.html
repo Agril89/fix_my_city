@@ -4,14 +4,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>FixMyCity</title>
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/map.css">
+	<link rel="stylesheet" href="css/ol.css" type="text/css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="icon" href="img/favicon.ico">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/ol.css" type="text/css">
+	<script src="js/ol.js"></script>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script> -->
+	
     <style>
 		.map {
         height: 100%;
@@ -49,10 +51,10 @@
 					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">About Us</a>
+					<a class="nav-link" href="map.html">Maps</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="map.html">Maps</a>
+					<a class="nav-link" href="#">About Us</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#">How it work</a>
@@ -67,86 +69,107 @@
 		</div>
 		
 	</nav>	
-	<div id="map">
-		<div id="txt"></div>
-	</div>
-    <script type="text/javascript">
-		/**
-			* Elements that make up the popup.
-			*/
-			vectorSource = new ol.source.Vector(),
-			vectorLayer = new ol.layer.Vector({
-				source: vectorSource
-			}),	
-			olview = new ol.View({
-					center: [998727.43,5527988.53],
-					zoom: 17,
-					minZoom: 15,
-					maxZoom: 19
-			}),
-			map = new ol.Map({
-				target: document.getElementById('map'),
-				view: olview,
-				layers: [
-				new ol.layer.Tile({
-					source: new ol.source.OSM()
-				}),
-				vectorLayer
-				]
-			});		
+	<div id="map" class="map"></div>
+	<div id="popup" class="ol-popup">
+      <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+      <div id="popup-content"></div>
+    </div>
+    <script type="text/javascript">	  
+		var container = document.getElementById('popup');
+		var content = document.getElementById('popup-content');
+		var closer = document.getElementById('popup-closer');
 
-			var iconFeature = new ol.Feature({
-        geometry: new ol.geom.Point([0, 0]),
-        name: 'Null Island',
-        population: 4000,
-        rainfall: 500
-      });
-	  
-			var iconStyle = new ol.style.Style({
-				image: new ol.style.Icon({
-					anchor: [0.5, 46],
-					anchorXUnits: 'fraction',
-					anchorYUnits: 'pixels',
-					opacity: 0.75,
-					src: 'img/pin.png'
-				}),
-				text: new ol.style.Text({
-					font: '12px Calibri,sans-serif',
-					fill: new ol.style.Fill({ color: '#000' }),
-					stroke: new ol.style.Stroke({
-						color: '#fff', width: 2
-					}),
-					text: 'Some text'
-					})
-				});
-				map.on('click', function(evt){
-				var feature = new ol.Feature(
-				new ol.geom.Point(evt.coordinate)
-				);
-				feature.setStyle(iconStyle);
-				vectorSource.addFeature(feature);
+		/**
+		* Create an overlay to anchor the popup to the map.
+		*/
+		var overlay = new ol.Overlay(/** @type {olx.OverlayOptions} */ ({
+			element: container,
+			positioning: 'bottom-center',
+			stopEvent: false,
+			offset: [0, -50],
+			autoPan: true,
+			autoPanAnimation: {
+				duration: 250
+			}
+		}));
+
+		/**
+		* Add a click handler to hide the popup.
+		* @return {boolean} Don't follow the href.
+		*/
+		closer.onclick = function() {
+			overlay.setPosition(undefined);
+			closer.blur();
+			return false;
+		};
+	
+		var iconStyle = new ol.style.Style({
+			image: new ol.style.Icon({
+				anchor: [0.5, 46],
+				anchorXUnits: 'fraction',
+				anchorYUnits: 'pixels',
+				opacity: 0.75,
+				src: 'img/pin.png'
+			})
+		});
+		
+		var vectorSource = new ol.source.Vector();
+		var vectorLayer = new ol.layer.Vector({
+			source: vectorSource
+		});		
+
+		map = new ol.Map({
+			interactions : ol.interaction.defaults({doubleClickZoom :false}),
+			target: document.getElementById('map'),
+			view: new ol.View({
+				center: [998727.43,5527988.53],
+				zoom: 17,
+				minZoom: 15,
+				maxZoom: 19
+			}),
+			overlays: [overlay],
+			layers: [new ol.layer.Tile({source: new ol.source.OSM()}), vectorLayer]
+		});			
+		
+		map.on('dblclick', function(evt){
+			var feature = new ol.Feature({
+				geometry: new ol.geom.Point(evt.coordinate),
+				name: 'Null Island',
+				population: 4000,
+				rainfall: 500
 			});
-			
-			iconFeature.setStyle(iconStyle);
-			
-			var popup = new ol.Overlay({
-        element: element,
-        positioning: 'bottom-center',
-        stopEvent: false,
-        offset: [0, -50]
-      });
-      map.addOverlay(popup);
-			
-			
-		</script>
+			feature.setStyle(iconStyle);
+			vectorSource.addFeature(feature);
+		});	
+
+		// display popup on click
+		map.on('click', function(evt) {
+			var feature = map.forEachFeatureAtPixel(evt.pixel,
+				function(feature) {
+					return feature;
+				});
+			if (feature) {
+				var coordinates = feature.getGeometry().getCoordinates();
+				overlay.setPosition(coordinates);
+				content.innerHTML = feature.get('name');
+			}
+		});
+
+		// change mouse cursor when over marker
+		map.on('pointermove', function(e) {
+			var pixel = map.getEventPixel(e.originalEvent);
+			var hit = map.hasFeatureAtPixel(pixel);
+			map.getTarget().style.cursor = hit ? 'pointer' : '';
+		});		
+	</script>
 		
-		<footer class="footer">
-			<div class="container">
-				<div class="copyright">
-					Copyright ©2017. All Rights Reserved. Powered by Luca Roatta & Simone Hu
-				</div>
+	<footer class="footer">
+		<div class="container">
+			<div class="copyright">
+				Copyright ©2017. All Rights Reserved. Powered by Luca Roatta & Simone Hu
 			</div>
-		</footer>
+		</div>
+	</footer>
 		
-	</body>
+</body>
 </html>				
