@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>FixMyCity</title>
+    <link rel="stylesheet" href="css/style.css">
+
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="icon" href="img/favicon.ico">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<script type="text/javascript">
+		jQuery(document).ready(function($){
+			$("a.attiva-nav").click(function() {
+				$("nav").slideToggle();
+				$(this).toggleClass("active");
+			});
+			
+			$(window).resize(function() {
+				var windowsize = $(window).width();
+				if (windowsize > 600) {
+					$('nav').css('display', '');
+				}
+			});
+			
+		});
+	</script>
+    	<link rel="stylesheet" href="css/register.css">
+</head>
+<body class="bg">
+    <div>
+	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a href="#" class="navbar-brand"><img style="max-width:100px; margin-top: -7px;" src="img/logo-main.png"></a>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="map.html">About Us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="#">How it work</a>
+				</li>
+			</ul>
+		</div>
+		
+	</nav>
+	<div class="vertical-center">
+		<div class="bodys body-s">
+		
+			<form action="" class="prova">
+				<header>Registration form</header>
+				
+				<fieldset>					
+					<section>
+						<p class="input">
+							<input type="text" placeholder="Username">
+						</p>
+					</section>
+					
+					<section>
+						<label class="input">
+							<i class="icon-append icon-envelope-alt"></i>
+							<input type="text" placeholder="Email address">
+						</label>
+					</section>
+					
+					<section>
+						<label class="input">
+							<i class="icon-append icon-lock"></i>
+							<input type="password" placeholder="Password">
+						</label>
+					</section>
+					
+					<section>
+						<label class="input">
+							<i class="icon-append icon-lock"></i>
+							<input type="password" placeholder="Confirm password">
+						</label>
+					</section>
+				</fieldset>
+					
+				<fieldset>
+					<div class="row">
+						<section class="col">
+							<label class="input">
+								<input type="text" placeholder="First name">
+							</label>
+						</section>
+						<section class="col">
+							<label class="input">
+								<input type="text" placeholder="Last name">
+							</label>
+						</section>
+					</div>
+					
+					<section>
+						<label class="select">
+							<select>
+								<option value="0" selected disabled>Gender</option>
+								<option value="1">Male</option>
+								<option value="2">Female</option>
+							</select>
+							<i></i>
+						</label>
+					</section>
+					
+					<section>
+						<label class=""><input type="checkbox" name="checkbox"><i></i>I agree to the Terms of Service</label>
+
+					</section>
+				</fieldset>
+				<footer>
+                    <section>
+                        <button type="submit" class="button">Submit</button>
+                        <button type="submit" class="button">Cancel</button>
+                    </section>
+				</footer>
+			</form>
+			
+		</div>
+    </div>
+    <footer class="footer">
+		<div class="container">
+			<div class="copyright">
+				Copyright ©2017. All Rights Reserved. Powered by Luca Roatta & Simone Hu
+			</div>
+		</div>
+	</footer>
+    </div>
+</body>
+</html>

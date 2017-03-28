@@ -1,0 +1,217 @@
+/* Box-sizing -*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	*behavior: url('/test/grid/script/boxsizing.htc');
+}
+
+/* Display block per gli elementi HTML5 su IE */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+	display: block;
+}
+
+/* Immagini responsive */
+img { 
+	border:0; 
+	vertical-align:middle; 
+	-ms-interpolation-mode:bicubic;
+}
+
+img.scala { 
+	max-width:100%; 
+	height:auto; 
+}
+
+#logo img {
+	max-height: 70px;
+	float: left;
+}
+
+/* Stili di base e tipografia */
+html {
+	font-size: 100%;
+	position: relative;
+	height: 100%;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; 
+    color: #ccc !important;
+	height: 100%;
+	margin-bottom: 60px;
+    background-color: #222;
+}
+
+a {
+	color: #558bc4;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #558bc4;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 { 
+	font-family:"Georgia", "Times New Roman", serif; 
+} 
+
+h1 { 
+	font-size:42px; 
+	line-height:46px; 
+	margin-bottom:20px; 
+}
+
+h2 { 
+	font-size:28px; 
+	line-height:32px; 
+	margin-bottom:12px; 
+}
+
+h3 { 
+	font-size:21px; 
+	line-height:25px; 
+	margin-bottom:8px; 
+}
+
+p {
+	color: #ccc;
+}
+
+/* Griglia */
+body.bg {
+   	background-size: cover;
+   	background-repeat: no-repeat;
+   	min-height: 100%;
+   	background: #222 url(../img/background.jpg) no-repeat center;
+   	-webkit-background-size: cover;
+   	-moz-background-size: cover;
+   	-o-background-size: cover;
+}
+
+.vertical-center {
+	min-height: 100%;  /* Fallback for vh unit */
+  min-height: 100vh; /* You might also want to use
+                        'height' property instead.
+                        
+                        Note that for percentage values of
+                        'height' or 'min-height' properties,
+                        the 'height' of the parent element
+                        should be specified explicitly.
+  
+                        In this case the parent of '.vertical-center'
+                        is the <body> element */
+
+  /* Make it a flex container */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex; 
+  
+  /* Align the bootstrap's container vertically */
+    -webkit-box-align : center;
+  -webkit-align-items : center;
+       -moz-box-align : center;
+       -ms-flex-align : center;
+          align-items : center;
+  
+  /* In legacy web browsers such as Firefox 9
+     we need to specify the width of the flex container */
+  width: 100%;
+  
+  /* Also 'margin: 0 auto' doesn't have any effect on flex items in such web browsers
+     hence the bootstrap's container won't be aligned to the center anymore.
+  
+     Therefore, we should use the following declarations to get it centered again */
+         -webkit-box-pack : center;
+            -moz-box-pack : center;
+            -ms-flex-pack : center;
+  -webkit-justify-content : center;
+          justify-content : center;
+}
+
+.col-centered{
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.copyright {
+    text-align: center;
+	color: #ccc;
+}
+
+.nav-logo {
+	 background: url(../img/logo-main.png) no-repeat center;
+	 height: 30px;
+	 width:80px;
+}
+
+.logo {
+	background: url(../img/logo-main.png) no-repeat center;
+	width: auto;
+	height: 100px;
+}
+
+.footer {
+    background: #292b2c !important;
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+}
+
+/* Stili  per le varie sezioni */
+#page {
+    position: relative;
+    left: 0;
+}
+
+header {
+	padding: 5px;
+	height: 70px;
+	position: relative;
+}
+
+#main {
+	background: rgba(238,238,238,0.75);
+	width: auto !important;
+	border-radius: .25rem;
+}
+
+#main h2 {
+	color: #292b2c;
+}
+
+nav ul, nav li {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	list-style: none;
+	float: left;
+	margin-right: 5px;
+}
+
+nav ul li a {
+	display: block;
+	padding: 5px;
+}
+
+a.attiva-nav {
+	display: none;
+}

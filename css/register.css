@@ -1,0 +1,291 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	background-size: cover;
+    background-color: black;
+}
+
+.formlabel{
+    display: block;
+}
+
+
+.bodys {
+    	margin: 0;
+	padding: 0;
+	background-attachment: fixed;
+	background-position: 50% 50%;
+	background-size: cover;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 40px;
+}
+.body-s {
+	max-width: 600px;
+}
+
+
+/**/
+/* defaults */
+/**/
+.prova * {
+	margin: 0;
+	padding: 0;
+}
+
+.prova {
+	outline: none;
+	box-shadow: 0 0 20px rgba(0,0,0,.3);
+    border-radius: 12px;
+	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #666;
+    width: 100% !important;
+}
+
+.prova header {
+	padding: 20px 70px;	
+	border-bottom: 1px solid rgba(0,0,0,.1);
+	background: rgba(238,238,238,.9);
+	font-size: 25px;
+	font-weight: 300;
+	color: #232323;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.prova fieldset {
+	padding: 25px 70px 5px;
+	border: none;
+	background: rgba(255,255,255,1);
+}
+.prova fieldset + fieldset {
+	border-top: 1px solid rgba(0,0,0,.1);
+}
+.prova section {
+	margin-bottom: 20px;
+    width: 100%;
+}
+.prova footer {
+	padding: 0px 30px 40px;
+	border-top: 1px solid rgba(0,0,0,.1);
+	background: rgba(238,238,238,.9);
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.prova .select{
+	position: relative;
+	display: block;
+}
+
+.input {
+    display: block;
+}
+
+.prova .input input,
+.prova .select select,
+.prova .areatesto areatesto {
+    display: block !important;
+	height: 39px;
+	padding: 8px 10px;
+	outline: none;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 5;
+	background: #fff;
+	font: 15px/19px 'Open Sans', Helvetica, Arial, sans-serif;
+	color: #404040;
+	appearance: normal;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+    	width: 100% !important;
+    
+}
+
+
+/* selects */
+/**/
+.prova .select i {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	width: 5px;
+	height: 11px;
+	background: #fff;
+}
+.prova .select i:after,
+.prova .select i:before {
+	content: '';
+	position: absolute;
+	right: 0;
+	border-right: 4px solid transparent;
+	border-left: 4px solid transparent;
+}
+.prova .select i:after {
+	bottom: 0;
+	border-top: 4px solid #404040;
+}
+.prova .select i:before {
+	top: 0;
+	border-bottom: 4px solid #404040;
+}
+
+input[type=checkbox] {
+  margin-right: 15px;
+	cursor: pointer;
+}
+
+
+
+/**/
+/* buttons */
+/**/
+.prova .button {
+	float: right;
+	height: 39px;
+	margin: 10px 0 0 0;
+	padding: 0 5px;
+	border: 0;
+	font: 300 15px/39px 'Open Sans', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+
+/**/
+/* grid */
+/**/
+.prova .row {
+	margin: 0 -15px;
+}
+.prova .row:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.prova .col {
+	float: left;
+    width: 50%;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+
+
+
+/**/
+/* normal state */
+/**/
+.prova .input input,
+.prova .select select,
+.prova .areatesto areatesto,
+.prova .radio i,
+
+.prova .toggle i,
+.prova .icon-append,
+.prova .icon-prepend {
+	border-color: #e5e5e5;
+	transition: border-color 0.3s;
+	-o-transition: border-color 0.3s;
+	-ms-transition: border-color 0.3s;
+	-moz-transition: border-color 0.3s;
+	-webkit-transition: border-color 0.3s;
+}
+
+.prova .button {
+    background-color: transparent;
+    color: #3979ff;
+    font-size: 20px;
+	opacity: 0.8;
+	transition: opacity 0.2s;
+	-o-transition: opacity 0.2s;
+	-ms-transition: opacity 0.2s;
+	-moz-transition: opacity 0.2s;
+	-webkit-transition: opacity 0.2s;
+}
+
+
+
+/**/
+/* hover state */
+/**/
+.prova .input:hover input,
+.prova .select:hover select,
+.prova .areatesto:hover areatesto,
+.prova .radio:hover i,
+.prova .checkbox:hover i,
+.prova .toggle:hover i {
+	border-color: #8dc9e5;
+}
+.prova .rating input + label:hover,
+.prova .rating input + label:hover ~ label {
+	color: #2da5da;
+}
+.prova .button:hover {
+	opacity: 1;
+    color: #39aaff;
+}
+
+
+/**/
+/* focus state */
+/**/
+.prova .input input:focus,
+.prova .select select:focus,
+.prova .areatesto areatesto:focus,
+.prova .radio input:focus + i,
+.prova .checkbox input:focus + i,
+.prova .toggle input:focus + i {
+	border-color: #2da5da;
+}
+
+/**/
+/* error state */
+/**/
+.prova .state-error input,
+.prova .state-error select,
+.prova .state-error areatesto,
+.prova .radio.state-error i,
+.prova .checkbox.state-error i,
+.prova .toggle.state-error i {
+	background: #fff0f0;
+}
+.prova .state-error select + i {
+	background: #fff0f0;
+	box-shadow: 0 0 0 12px #fff0f0;
+}
+.prova .toggle.state-error input:checked + i {
+	background: #fff0f0;
+}
+.prova .note-error {
+	color: #ee9393;	
+}
+
+
+/**/
+/* success state */
+/**/
+.prova .state-success input,
+.prova .state-success select,
+.prova .state-success areatesto,
+.prova .radio.state-success i,
+.prova .checkbox.state-success i,
+.prova .toggle.state-success i {
+	background: #f0fff0;
+}
+.prova .state-success select + i {
+	background: #f0fff0;
+	box-shadow: 0 0 0 12px #f0fff0;
+}
+.prova .toggle.state-success input:checked + i {
+	background: #f0fff0;
+}
+.prova .note-success {
+	color: #6fb679;
+}
+
+
+

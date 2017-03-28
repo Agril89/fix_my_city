@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<database>
+    <utente>
+        <id>luca</id>
+        <password>potter</password>
+    </utente>
+    <utente>
+        <id>2</id>
+        <password>pluto</password>
+    </utente>
+    <utente>
+        <id>3</id>
+        <password>paperino</password>
+    </utente>
+</database>
