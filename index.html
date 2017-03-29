@@ -29,6 +29,7 @@
 	</script>
 </head>
 <body class="bg">
+<header>
 	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -37,7 +38,7 @@
 		<div class="collapse navbar-collapse" id="navbarCollapse">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="map.html">Maps</a>
@@ -50,22 +51,23 @@
 				</li>
 			</ul>
 			<form class="form-inline mt-2 mt-md-0" name="modulo">
-				<input class="form-control mr-sm-2" type="text" placeholder="User" name="u_id">
+				<input class="form-control mr-sm-2" type="text" placeholder="Username" name="u_id">
 				<input class="form-control mr-sm-2" type="password" placeholder="Password" name="pass">
 				<input class="btn btn-outline-success my-2 my-sm-0" type="button" value="Login" onclick="XML_Login()">			
 				<a class="nav-link" href="register.html">Registrati</a>
 			</form>
-		</div>
-		
+		</div>	
 	</nav>
+	</header>
 	
-	
-	<div class="vertical-center">
-		<div id="main" class="container text-center">
+	<div class="body-content">
+	<div class="row vertical-align">
+		<div class="main container text-center">
 			<div class="logo"></div>
 			<h2>Controlla, discuti, o segnala i problemi della tua città</h2>
+			<div class="container">
 			<div class="row">
-				<div class="col-md-5 col-centered">
+				<div class="col-6 offset-3">
 					<form class="input-group">
 						<input type="text" class="form-control input-lg" placeholder="Cerca" />
 						<span class="input-group-btn">
@@ -76,16 +78,21 @@
 					</form>
 				</div>
 			</div>
-		</div>
-	</div>
-	
-	
-    <footer class="footer">
-		<div class="container">
-			<div class="copyright">
-				Copyright ©2017. All Rights Reserved. Powered by Luca Roatta & Simone Hu
 			</div>
 		</div>
+	</div>
+	</div>
+	
+	<footer>
+	<div class="container-fluid">
+		<div class="row">
+			<footer class="footer fixed-bottom">
+				<div class="col-12 copyright">
+					<p>Copyright ©2017. All Rights Reserved. Powered by Luca Roatta & Simone Hu</p>
+				</div>
+			</footer>	
+		</div>
+	</div>
 	</footer>
 	
 </body>
