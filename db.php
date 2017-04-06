@@ -15,7 +15,7 @@ $sql = "CREATE TABLE persons(
     email VARCHAR(70) NOT NULL UNIQUE
 )";
 # Now let's use the connection for something silly just to prove it works:
-$result = $pg_conn -> exec($sql);
+$result = pg_exec($db, $sql);
 print "<pre>\n";
 if (!pg_num_rows($result)) {
   print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
