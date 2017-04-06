@@ -6,7 +6,7 @@ function pg_connection_string_from_database_url() {
   return "user=$user password=$pass host=$host dbname=" . substr($path, 1); # <- you may want to add sslmode=require there too
 }
 # Here we establish the connection. Yes, that's all.
-pg_connect("dbname=d1srmsgt82bu8m user=isydexkvgtiacw password=25eea9d65194cf69e844e939961d82864002e53e40c3b036e3b377ab4654c494") or die("Couldn't Connect ".pg_last_error()); // Connect to the Database
+pg_connect("host=ec2-79-125-13-42.eu-west-1.compute.amazonaws.com port=5432 dbname=d1srmsgt82bu8m user=isydexkvgtiacw password=25eea9d65194cf69e844e939961d82864002e53e40c3b036e3b377ab4654c494") or die("Couldn't Connect ".pg_last_error()); // Connect to the Database
 
 $sql = "CREATE TABLE users (
   username varchar(32) NOT NULL PRIMARY KEY,
