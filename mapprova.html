@@ -3,11 +3,74 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>FixMyCity</title>
-	<link rel="stylesheet" href="css/style.css">
+
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/ol.css" type="text/css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="icon" href="img/favicon.ico">
+
+</head>
+<body>
+		<header>
+			<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+				<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<a href="#" class="navbar-brand"><img style="max-width:100px; margin-top: -7px;" src="img/logo-main.png"></a>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="map.html">Maps</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#">How it work</a>
+						</li>
+					</ul>
+					<form class="form-inline mt-2 mt-md-0" name="modulo">
+						<!--<input class="form-control mr-sm-2" type="text" placeholder="Username" name="u_id">
+						<input class="form-control mr-sm-2" type="password" placeholder="Password" name="pass">-->
+						<input class="btn btn-outline-success my-2 my-sm-0" type="button" value="Login" onclick="XML_Login()">			
+						<a class="nav-link" href="register.html">Registrati</a>
+					</form>
+				</div>	
+			</nav>
+		</header>
+	<div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7">
+			<div id="map"></div>
+				<div id="popup" class="ol-popup">
+				<a href="#" id="popup-closer" class="ol-popup-closer"></a>
+				<div id="popup-content"></div>
+			</div>
+		</div>
+        <div class="col-md-5">
+			<div class="map_sidebar"></div>
+		</div>
+      </div>			
+	</div>
+
+	
+	<footer>
+	<div class="container-fluid">
+		<div class="row">
+			<footer class="footer fixed-bottom">
+				<div class="col-12 copyright">
+					<p>Copyright ©2017. All Rights Reserved. Powered by Luca Roatta & Simone Hu</p>
+				</div>
+			</footer>	
+		</div>
+	</div>
+	</footer>
+	
+	
 	<script src="js/jquery-3.2.0.js"></script>
     <script src="js/bootstrap.min.js"></script>
 	<script src="js/ol.js"></script>
@@ -28,45 +91,6 @@
 			
 		});
 	</script>
-</head>
-<body>
-<header>
-	<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<a href="#" class="navbar-brand"><img style="max-width:100px; margin-top: -7px;" src="img/logo-main.png"></a>
-		<div class="collapse navbar-collapse" id="navbarCollapse">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="map.html">Maps</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#">About Us</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="#">How it work</a>
-				</li>
-			</ul>
-			<form class="form-inline mt-2 mt-md-0" name="modulo">
-				<input class="form-control mr-sm-2" type="text" placeholder="Username" name="u_id">
-				<input class="form-control mr-sm-2" type="password" placeholder="Password" name="pass">
-				<input class="btn btn-outline-success my-2 my-sm-0" type="button" value="Login" onclick="XML_Login()">			
-				<a class="nav-link" href="register.html">Registrati</a>
-			</form>
-		</div>	
-	</nav>
-	</header>
-		<div class="body-content">
-				<div id="map" class="fill-height"></div>
-				<div id="popup" class="ol-popup">
-					<a href="#" id="popup-closer" class="ol-popup-closer"></a>
-					<div id="popup-content"></div>
-				</div>
-
 				<script type="text/javascript">	  
 					var container = document.getElementById('popup');
 					var content = document.getElementById('popup-content');
@@ -144,7 +168,7 @@
 						if (feature) {
 							var coordinates = feature.getGeometry().getCoordinates();
 							overlay.setPosition(coordinates);
-							content.innerHTML = feature.get('name');
+							content.innerHTML = feature.get('name', 'population');
 						}
 					});
 
@@ -154,21 +178,6 @@
 						var hit = map.hasFeatureAtPixel(pixel);
 						map.getTarget().style.cursor = hit ? 'pointer' : '';
 					});		
-				</script>
-			</div>
-
-	<footer>
-	<div class="container-fluid">
-		<div class="row">
-			<footer class="footer fixed-bottom">
-				<div class="col-12 copyright">
-					<p>Copyright ©2017. All Rights Reserved. Powered by Luca Roatta & Simone Hu</p>
-				</div>
-			</footer>	
-		</div>
-	</div>
-	</footer>
-	
-	
+				</script>	
 </body>
 </html>				

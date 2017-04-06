@@ -7381,6 +7381,7 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   right: 0;
   left: 0;
   z-index: 1030;
+  height: 60px;
 }
 
 .fixed-bottom {
