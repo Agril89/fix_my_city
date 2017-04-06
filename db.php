@@ -8,20 +8,20 @@ function pg_connection_string_from_database_url() {
 # Here we establish the connection. Yes, that's all.
 $pg_conn = pg_connect(pg_connection_string_from_database_url());
 
-$sql = "CREATE TABLE persons(
-    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(30) NOT NULL,
-    last_name VARCHAR(30) NOT NULL,
-    email VARCHAR(70) NOT NULL UNIQUE
+$sql = "CREATE TABLE users (
+  username varchar(32) NOT NULL PRIMARY KEY,
+  email varchar(32) NOT NULL,
+  password varchar(32) NOT NULL,
+    first_name varchar(16) NOT NULL,
+    last_name varchar(16) NOT NULL,
+    gender varchar(1) NOT NULL,
 )";
 # Now let's use the connection for something silly just to prove it works:
-$result = pg_exec($db, $sql);
-print "<pre>\n";
-if (!pg_num_rows($result)) {
-  print("Your connection is working, but your database is empty.\nFret not. This is expected for new apps.\n");
-} else {
-  print "Tables in your database:\n";
-  while ($row = pg_fetch_row($result)) { print("- $row[0]\n"); }
+$query = pg_query($sql); // Execute the Query
+if($query)
+  echo "Table Created"; // Check to see if The Query Worked.
+else{
+  echo "An error Occured! ".pg_last_error();
 }
 print "\n";
 ?>
