@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+session_start();// come sempre prima cosa, aprire la sessione 
+include("db.php"); // includere la connessione al database
+?>
 <html>
 <head>
 	<meta charset="utf-8"/>
@@ -68,21 +72,21 @@
 					<fieldset>					
 						<section>
 							<p class="input">
-								<input type="text" name="Username" placeholder="Username">
+								<input type="text" name="username_reg" placeholder="Username">
 							</p>
 						</section>
 						
 						<section>
 							<label class="input">
 								<i class="icon-append icon-envelope-alt"></i>
-								<input type="text" placeholder="Email address">
+								<input type="text" name="email_reg" "placeholder="Email address">
 							</label>
 						</section>
 						
 						<section>
 							<label class="input">
 								<i class="icon-append icon-lock"></i>
-								<input type="password" placeholder="Password">
+								<input type="password" name="password_reg" placeholder="Password">
 							</label>
 						</section>
 						
@@ -98,12 +102,12 @@
 						<div class="row">
 							<section class="col">
 								<label class="input">
-									<input type="text" placeholder="First name">
+									<input type="text" name="name_reg" placeholder="First name">
 								</label>
 							</section>
 							<section class="col">
 								<label class="input">
-									<input type="text" placeholder="Last name">
+									<input type="text" name="surname_reg" placeholder="Last name">
 								</label>
 							</section>
 						</div>
