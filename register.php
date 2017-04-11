@@ -7,8 +7,10 @@ include("db.php"); // includo il file di connessione al database
 	else if($_POST['gender']=='2') {
 		$gender='f' ;
 	}
+	
+	$contract = isset($_POST['contract']) ? $_POST['contract'] : 'no';
 
-if($_POST["username_reg"] != "" && $_POST["password_reg"]!= "" && $_POST["email_reg"] != "" && $_POST["name_reg"] != "" && $_POST["surname_reg"] != "" && $_POST["gender"] != "0" && $_POST['contract'] != "yes"){  // se i parametri iscritto non sono vuoti non sono vuote
+if($_POST["username_reg"] != "" && $_POST["password_reg"]!= "" && $_POST["email_reg"] != "" && $_POST["name_reg"] != "" && $_POST["surname_reg"] != "" && $_POST["gender"] != "0" && $contract != "no"){  // se i parametri iscritto non sono vuoti non sono vuote
 	$query_registrazione = pg_query("INSERT INTO users (username,email,password,first_name,last_name,gender)
 	VALUES ('".$_POST["username_reg"]."','".$_POST["email_reg"]."','".$_POST["password_reg"]."','".$_POST[name_reg]."','".$_POST[surname_reg]."','".$gender."')") // scrivo sul DB questi valori
 	or die ("query di registrazione non riuscita".pg_error()); // se la query fallisce mostrami questo errore
