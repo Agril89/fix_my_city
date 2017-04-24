@@ -3922,7 +3922,8 @@ tbody.collapse.show {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0.5rem 1rem;
+  padding: 10px 16px;
+  align-items: left;
 }
 
 .navbar-brand {
@@ -7381,7 +7382,6 @@ a.bg-inverse:focus, a.bg-inverse:hover {
   right: 0;
   left: 0;
   z-index: 1030;
-  height: 60px;
 }
 
 .fixed-bottom {
