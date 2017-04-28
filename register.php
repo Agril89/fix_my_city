@@ -5,7 +5,7 @@
 	{
 		if($fixmycity->RegisterUser())
 		{
-			$fixmycity->RedirectToURL("login.php");
+			//$fixmycity->RedirectToURL("login.php");
 		}
 	}
 	if(isset($_POST['logout']))

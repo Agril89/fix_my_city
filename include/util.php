@@ -37,6 +37,7 @@
 			$name= trim($_POST['name']);
 			$surname= trim($_POST['surname']);
 			$gender=$contract=NULL;
+			
 			if (isset($_POST['gender'])){
 				$gender=$_POST['gender'];
 				}
