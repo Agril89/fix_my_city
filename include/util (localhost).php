@@ -17,12 +17,10 @@
 		//Init Database
 		function InitDB($host,$uname,$pwd,$database,$tablename)
 		{
-			$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-			
-			$this->db_host  = $url["host"];
-			$this->username = $url["user"];
-			$this->pwd  = $url["pass"];
-			$this->database  = substr($url["path"], 1);
+			$this->db_host  = $host;
+			$this->username = $uname;
+			$this->pwd  = $pwd;
+			$this->database  = $database;
 			$this->tablename = $tablename;
 			
 		}

@@ -4,7 +4,7 @@
 	$fixmycity->InitDB(/*hostname*/'localhost',
                       /*username*/'root',
                       /*password*/'',
-                      /*database name*/'progetto',
+                      /*database name*/'saw',
                       /*table name*/'users');
 
 ?>

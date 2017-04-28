@@ -9,23 +9,11 @@
 ?>
 <!doctype html>
 <html>
-	<head>
-		<title>FixMyCity</title>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="css/style.css" type="text/css">
-		<link rel="stylesheet" href="css/bootstrap.css" type="text/css">
-		<link rel="stylesheet" href="css/ol.css" type="text/css">
-		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-		<link rel="icon" href="img/favicon.ico">
-		<script src="js/jquery-3.2.0.js" type="text/javascript"></script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="js/ol.js" type="text/javascript"></script>
-	</head>
+	<?php include 'template/head.php';?>
 	<body>
 		<?php include 'template/header.php';?>
 		
-		<div class="body-content">
+		<div class="map">
 			<div id="map" class="fill-height"></div>
 			<div id="popup" class="ol-popup">
 				<a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -49,10 +37,7 @@
 					}
 				});
 				
-			});
-		</script>
-		
-		<script type="text/javascript">	  
+			}); 
 			var container = document.getElementById('popup');
 			var content = document.getElementById('popup-content');
 			var closer = document.getElementById('popup-closer');

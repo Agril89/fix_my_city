@@ -1,9 +1,10 @@
 html {
-  height: 100%;
+	height: 100%;
 }
+
 html body {
-  height: 100%;
-  overflow: hidden;
+	height: 100%;
+	overflow: auto;
 }
 
 header {
@@ -23,34 +24,15 @@ footer {
     height: 60px;
 }
 
-.map_sidebar {
-	background-color: red;
-	width:100%;
-	height:100%
-}
-
 .bg {
-   	background-size: cover;
-   	min-height: 100%;
-   	background: #222 url(../img/background.jpg) no-repeat center;
-   	-webkit-background-size: cover;
-   	-moz-background-size: cover;
-   	-o-background-size: cover;
+	background: url(../img/background.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	overflow: auto;
 }
 
-.body-content {
-  position: absolute;
-  top: 60px;
-  bottom: 60px;
-  right: 0;
-  left: 0;
-}
-
-.vertical-align {
-	margin-top: 25vh;
-    display: flex;
-    align-items: center;
-}
 
 .outer {
     display: table;
@@ -68,7 +50,6 @@ footer {
 .inner {
     margin-left: auto;
     margin-right: auto; 
-    width: /*whatever width you want*/;
 }
 
 .logo {
@@ -91,20 +72,14 @@ footer {
 /* */
 /* Register Page */
 /* */
-.form_register * {
-	margin: 0;
-	padding: 0;
-}
-
 .form_register {
 	outline: none;
 	box-shadow: 0 0 20px rgba(0,0,0,.3);
     border-radius: 12px;
 	font: 13px/1.55 'Open Sans', Helvetica, Arial, sans-serif;
 	color: #666;
-    width: 50% !important;
-	margin-left: auto !important;
-	margin-right: auto !important;
+	padding: 20px;
+	background-color:rgba(255,255,255,1)
 }
 
 .form_register .header {
@@ -118,20 +93,7 @@ footer {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 }
-.form_register fieldset {
-	padding: 5px 70px 5px;
-	border: none;
-	background: rgba(255,255,255,1);
-}
-fieldset .row {
-	padding-top: 20px;
-}
-.form_register fieldset + fieldset {
-	border-top: 1px solid rgba(0,0,0,.1);
-}
-.form_register div {
-	margin-bottom: 20px;
-}
+
 .form_register .footer {
 	padding: 0px 30px 40px;
 	border-top: 1px solid rgba(0,0,0,.1);
@@ -140,211 +102,18 @@ fieldset .row {
     border-bottom-right-radius: 12px;
 }
 
-.form_register .select{
-	position: relative;
-	display: block;
-}
-
-.input {
-    display: block;
-}
-
-.form_register .input input,
-.form_register .select select,
-.form_register .areatesto areatesto {
-    display: block !important;
-	height: 39px;
-	padding: 8px 10px;
-	outline: none;
-	border-width: 2px;
-	border-style: solid;
-	border-radius: 5;
-	background: #fff;
-	font: 15px/19px 'Open Sans', Helvetica, Arial, sans-serif;
-	color: #404040;
-	appearance: normal;
-	-moz-appearance: none;
-	-webkit-appearance: none;
-    	width: 100% !important;
-    
-}
-
-/* selects */
-/**/
-.form_register .select i {
-	position: absolute;
-	top: 14px;
-	right: 14px;
-	width: 5px;
-	height: 11px;
-	background: #fff;
-}
-.form_register .select i:after,
-.form_register .select i:before {
-	content: '';
-	position: absolute;
-	right: 0;
-	border-right: 4px solid transparent;
-	border-left: 4px solid transparent;
-}
-.form_register .select i:after {
-	bottom: 0;
-	border-top: 4px solid #404040;
-}
-.form_register .select i:before {
-	top: 0;
-	border-bottom: 4px solid #404040;
-}
-
-input[type=checkbox] {
-  margin-right: 15px;
-	cursor: pointer;
-}
-
-/**/
-/* buttons */
-/**/
-.form_register .button {
-	float: right;
-	height: 39px;
-	margin: 10px 0 0 0;
-	padding: 0 5px;
-	border: 0;
-	font: 300 15px/39px 'Open Sans', Helvetica, Arial, sans-serif;
-    cursor: pointer;
-}
-
-/**/
-/* grid */
-/**/
-.form_register .row {
-	margin: 0 -15px;
-}
-.form_register .row:after {
-	content: '';
-	display: table;
-	clear: both;
-}
-.form_register .col {
-	float: left;
-    width: 50%;
-	min-height: 1px;
-	padding-right: 15px;
-	padding-left: 15px;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-}
-
-/**/
-/* normal state */
-/**/
-.form_register .input input,
-.form_register .select select,
-.form_register .areatesto areatesto,
-.form_register .radio i,
-
-.form_register .toggle i,
-.form_register .icon-append,
-.form_register .icon-prepend {
-	border-color: #e5e5e5;
-	transition: border-color 0.3s;
-	-o-transition: border-color 0.3s;
-	-ms-transition: border-color 0.3s;
-	-moz-transition: border-color 0.3s;
-	-webkit-transition: border-color 0.3s;
-}
-
-.form_register .button {
-    background-color: transparent;
-    color: #3979ff;
-    font-size: 20px;
-	opacity: 0.8;
-	transition: opacity 0.2s;
-	-o-transition: opacity 0.2s;
-	-ms-transition: opacity 0.2s;
-	-moz-transition: opacity 0.2s;
-	-webkit-transition: opacity 0.2s;
-}
-
-/**/
-/* hover state */
-/**/
-.form_register .input:hover input,
-.form_register .select:hover select,
-.form_register .areatesto:hover areatesto,
-.form_register .radio:hover i,
-.form_register .checkbox:hover i,
-.form_register .toggle:hover i {
-	border-color: #8dc9e5;
-}
-.form_register .rating input + label:hover,
-.form_register .rating input + label:hover ~ label {
-	color: #2da5da;
-}
-.form_register .button:hover {
-	opacity: 1;
-    color: #39aaff;
-}
-
-/**/
-/* focus state */
-/**/
-.form_register .input input:focus,
-.form_register .select select:focus,
-.form_register .areatesto areatesto:focus,
-.form_register .radio input:focus + i,
-.form_register .checkbox input:focus + i,
-.form_register .toggle input:focus + i {
-	border-color: #2da5da;
-}
-
-/**/
-/* error state */
-/**/
-.form_register .state-error input,
-.form_register .state-error select,
-.form_register .state-error areatesto,
-.form_register .radio.state-error i,
-.form_register .checkbox.state-error i,
-.form_register .toggle.state-error i {
-	background: #fff0f0;
-}
-.form_register .state-error select + i {
-	background: #fff0f0;
-	box-shadow: 0 0 0 12px #fff0f0;
-}
-.form_register .toggle.state-error input:checked + i {
-	background: #fff0f0;
-}
-.form_register .note-error {
-	color: #ee9393;	
-}
-
-/**/
-/* success state */
-/**/
-.form_register .state-success input,
-.form_register .state-success select,
-.form_register .state-success areatesto,
-.form_register .radio.state-success i,
-.form_register .checkbox.state-success i,
-.form_register .toggle.state-success i {
-	background: #f0fff0;
-}
-.form_register .state-success select + i {
-	background: #f0fff0;
-	box-shadow: 0 0 0 12px #f0fff0;
-}
-.form_register .toggle.state-success input:checked + i {
-	background: #f0fff0;
-}
-.form_register .note-success {
-	color: #6fb679;
-}
-
 /* */
 /* Map Page */
 /* */
+
+.map {
+	position: absolute;
+	top: 60px;
+	bottom: 60px;
+	right: 0;
+	left: 0;
+}
+
 .fill-height {
     min-height: 100%;
     height:auto !important; /* cross-browser */
@@ -362,47 +131,47 @@ input[type=checkbox] {
     text-align: center;
 }
 
-      .ol-popup {
-        position: absolute;
-        background-color: white;
-        -webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
-        filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
-        padding: 15px;
-        border-radius: 10px;
-        border: 1px solid #cccccc;
-        bottom: 12px;
-        left: -50px;
-        min-width: 280px;
-      }
-      .ol-popup:after, .ol-popup:before {
-        top: 100%;
-        border: solid transparent;
-        content: " ";
-        height: 0;
-        width: 0;
-        position: absolute;
-        pointer-events: none;
-      }
-      .ol-popup:after {
-        border-top-color: white;
-        border-width: 10px;
-        left: 48px;
-        margin-left: -10px;
-      }
-      .ol-popup:before {
-        border-top-color: #cccccc;
-        border-width: 11px;
-        left: 48px;
-        margin-left: -11px;
-      }
-      .ol-popup-closer {
-        text-decoration: none;
-        position: absolute;
-        top: 2px;
-        right: 8px;
-      }
-      .ol-popup-closer:after {
-        content: "✖";
-      }
-	  
-	  
+.ol-popup {
+	position: absolute;
+	background-color: white;
+	-webkit-filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+	filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
+	padding: 15px;
+	border-radius: 10px;
+	border: 1px solid #cccccc;
+	bottom: 12px;
+	left: -50px;
+	min-width: 280px;
+}
+.ol-popup:after, .ol-popup:before {
+	top: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.ol-popup:after {
+	border-top-color: white;
+	border-width: 10px;
+	left: 48px;
+	margin-left: -10px;
+}
+.ol-popup:before {
+	border-top-color: #cccccc;
+	border-width: 11px;
+	left: 48px;
+	margin-left: -11px;
+}
+.ol-popup-closer {
+	text-decoration: none;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+}
+.ol-popup-closer:after {
+	content: "✖";
+}
+
+

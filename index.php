@@ -8,18 +8,7 @@
 ?>
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>FixMyCity</title>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="img/favicon.ico" type="text/css">
-		<link rel="stylesheet" href="css/style.css" type="text/css">
-		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-		<link rel="stylesheet" href="css/bootstrap.css"type="text/css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="js/function.js" type="text/javascript"></script>
-	</head>
+	<?php include 'template/head.php';?>
 	<body class="bg">
 		<?php include 'template/header.php';?>
 		
@@ -66,6 +55,6 @@
 			});
 			
 			});
-			</script>
-			</body>
-			</html>			
+		</script>
+	</body>
+</html>			

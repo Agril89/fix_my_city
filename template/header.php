@@ -20,10 +20,10 @@
 				</li>
 			</ul>
 			<?php 
-				session_start();
+				if(!isset($_SESSION)){ session_start(); }
 				if(isset($_SESSION['username']) || ($fixmycity->AutoLogin())) {
 					echo '<form class="form-inline mt-2 mt-md-0" name="form_login" method="post" action="">
-						<p style="color: rgba(255, 255, 255, 0.5); margin-right: 10px; line-height: 40px; margin-bottom: 0;"> Benvenuto <a href="#">' .$_SESSION['name'] . '</a></p>
+						<p style="color: rgba(255, 255, 255, 0.5); margin-right: 10px; line-height: 40px; margin-bottom: 0;"> Benvenuto <a href="account.php">' .$_SESSION['name'] . '</a></p>
 						<input class="btn btn-outline-success my-2 my-sm-0" name="logout" type="submit" value="Logout">			
 					</form>';
 				}

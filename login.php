@@ -18,59 +18,42 @@
 ?> 
 <!doctype html>
 <html>
-	<head>
-		<title>FixMyCity</title>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" href="img/favicon.ico" type="text/css">
-		<link rel="stylesheet" href="css/style.css" type="text/css">
-		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-		<link rel="stylesheet" href="css/bootstrap.css"type="text/css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
-		<script src="js/bootstrap.min.js" type="text/javascript"></script>
-		<script src="js/function.js" type="text/javascript"></script>
-	</head>
+	<?php include 'template/head.php';?>
 	<body class="bg">
 		<?php include 'template/header.php';?>
 		
 		<div class="outer">
 			<div class="middle">
-				<div class="inner container">
-					<form action="" class="form_register" method="post">
-						<div class="header">Login form</div>
-						
-						<fieldset>		
-							<div style="color:red; padding-top:15px;">
-								<?php
-									print_r ($fixmycity->getErrorMessage());
-								?>
-							</div>
-							<div>
-								<p class="input">
-									<input type="text" name="user" placeholder="Username o E-Mail" value="<?php if(isset($_COOKIE["member_login"])) { echo $_COOKIE["member_login"]; } ?>" />
-								</p>
-							</div>
-							
-							<div>
-								<label class="input">
-									<i class="icon-append icon-lock"></i>
-									<input type="password" name="pass" placeholder="Password" value="<?php if(isset($_COOKIE["member_password"])) { echo $_COOKIE["member_password"]; } ?>" />
-								</label>
-							</div>
-							
-							<div>
-								<input type="checkbox" name="remember" id="remember"  <?php if(isset($_COOKIE["member_login"])) { ?> checked <?php } ?> />
-								<label for="remember-me">Ricordami</label>
-							</div>
-							
-						</fieldset>
-						
-						<div class="footer">
-							<div>
-								<input class="button" type="submit" name="login" value="Login">
+				<div class="inner col-3">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<form role="form" class="form_register" method="post">
+									<h2 style="text-align:center;">Login</h2>
+									<hr>
+									<div class="form-group" style="color:red;">
+										<?php
+											echo $fixmycity->getErrorMessage();
+										?>
+									</div>
+									<div class="form-group">
+										<input type="text" name="user" id="username" class="form-control input-lg" placeholder="Username" tabindex="1">
+									</div>
+									<div class="form-group">
+										<input type="password" name="pass" id="password" class="form-control input-lg" placeholder="Password" tabindex="2">
+									</div>
+									<div>
+										<input type="checkbox" name="remember" id="remember" tabindex="3"/>
+										<label for="remember-me">Ricordami</label>
+									</div>
+									<hr>
+									<div class="row">
+										<div class="col-xs-12 col-md-6 offset-3"><input type="submit" value="Login" name="login" class="btn btn-primary btn-block btn-xs" tabindex="4"></div>
+									</div>
+								</form>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</div>
